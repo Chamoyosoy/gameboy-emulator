@@ -13,9 +13,9 @@
 ### Tecnologías 
 | Componente           | Tecnología       | Sistemas Soportados   |                       
 | -------------------- | ---------------- | --------------------- |  
-| Lenguaje Core        | C99/C11 (C puro) |                       |
-| Gráficos/Audio/Input | SDL2             |                       |
-| Compilador           | GCC o Clang      | Windows, Linux, macOS |
+| Lenguaje Core        | C99/C11 (C puro) |  Windows              |
+| Gráficos/Audio/Input | SDL2             |  Linux                |
+| Compilador           | GCC o Clang      |  macOS                |
 
 --- 
 ## 2. Especificaciones Técnicas 
@@ -27,16 +27,16 @@
 - Instrucciones: ~513 opcodes 
 - Modos de direccionamiento: inmediato, registro, indirecto 
 ### Memoria 
-| Rango Hexadecimal | Descripción                  | Tamaño     |     |
-| ----------------- | ---------------------------- | ---------- | --- |
-| 0x0000 - 0x7FFF   | Cartridge ROM                | 32KB-128MB |     |
-| 0x8000 - 0x9FFF   | Video RAM (VRAM)             | 8KB        |     |
-| 0xA000 - 0xBFFF   | Cartridge RAM                | Variable   |     |
-| 0xC000 - 0xDFFF   | Work RAM (WRAM)              | 4KB        |     |
-| 0xE000 - 0xFDFF   | Echo RAM                     | 4KB        |     |
-| 0xFE00 - 0xFE9F   | Sprite Attribute Table (OAM) | 160 bytes  |     |
-| 0xFF00 - 0xFF7F   | I/O Registers                | 128 bytes  |     |
-| 0xFF80 - 0xFFFF   | High RAM                     | 127 bytes  |     |
+| Rango Hexadecimal | Descripción                  | Tamaño     |
+| ----------------- | ---------------------------- | ---------- | 
+| 0x0000 - 0x7FFF   | Cartridge ROM                | 32KB-128MB |
+| 0x8000 - 0x9FFF   | Video RAM (VRAM)             | 8KB        |
+| 0xA000 - 0xBFFF   | Cartridge RAM                | Variable   |
+| 0xC000 - 0xDFFF   | Work RAM (WRAM)              | 4KB        |
+| 0xE000 - 0xFDFF   | Echo RAM                     | 4KB        |
+| 0xFE00 - 0xFE9F   | Sprite Attribute Table (OAM) | 160 bytes  |
+| 0xFF00 - 0xFF7F   | I/O Registers                | 128 bytes  |
+| 0xFF80 - 0xFFFF   | High RAM                     | 127 bytes  |
 ### GPU 
 - Resolución: 160×144 píxeles 
 - Colores: 4 tonos de verde (paleta DMG) 
