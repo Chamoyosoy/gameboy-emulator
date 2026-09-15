@@ -11,11 +11,11 @@
 - Manejo de entrada (teclado mapeado a botones) 
 
 ### Tecnologías 
-| Componente           | Tecnología       |     |                     |                       |                                                             |
-| -------------------- | ---------------- | --- | ------------------- | --------------------- | ----------------------------------------------------------- |
-| Lenguaje Core        | C99/C11 (C puro) |     |                     |                       |                                                             |
-| Gráficos/Audio/Input | SDL2             |     |                     |                       |                                                             |
-| Compilador           | GCC o Clang      |     | Sistemas Soportados | Windows, Linux, macOS | --- ## 2. Arquitectura del Sistema ### Módulos Principales` |
+| Componente           | Tecnología       | Sistemas Soportados   |                       
+| -------------------- | ---------------- | --------------------- |  
+| Lenguaje Core        | C99/C11 (C puro) |                       |
+| Gráficos/Audio/Input | SDL2             |                       |
+| Compilador           | GCC o Clang      | Windows, Linux, macOS |
 
 --- 
 ## 2. Especificaciones Técnicas 
