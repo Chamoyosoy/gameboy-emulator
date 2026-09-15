@@ -3,41 +3,25 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 
-int main(int argc, char* argv[]) {
-    // 1. Initialize SDL3 Video subsystem
-    if (!SDL_Init(SDL_INIT_VIDEO)) {
-        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not initialize SDL: %s\n", SDL_GetError());
-        return 1;
-    }
+int main(int argc, char *argv[]) {
+    SDL_Init(SDL_INIT_VIDEO);
 
-    // 2. Create the window
-    SDL_Window* window = SDL_CreateWindow(
-        "Hello SDL3",       // Title
-        640,                // Width
-        480,                // Height
-        SDL_WINDOW_OPENGL   // Flags
-    );
+    SDL_Window *w = SDL_CreateWindow("Test", 800, 600, 0);
+    SDL_Renderer *r = SDL_CreateRenderer(w, NULL);
 
-    if (!window) {
-        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not create window: %s\n", SDL_GetError());
-        SDL_Quit();
-        return 1;
-    }
-
-    // 3. Main loop
-    bool done = false;
-    SDL_Event event;
-    while (!done) {
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_EVENT_QUIT) {
-                done = true;
-            }
+    bool running = true;
+    while (running) {
+        SDL_Event e;
+        while (SDL_PollEvent(&e)) {
+            if (e.type == SDL_EVENT_QUIT) running = false;
         }
-        // Game logic and rendering go here
+        SDL_SetRenderDrawColor(r, 30, 30, 30, 255);
+        SDL_RenderClear(r);
+        SDL_RenderPresent(r);
     }
 
-    // 4. Cleanup
-    SDL_DestroyWindow(window);
+    SDL_DestroyRenderer(r);
+    SDL_DestroyWindow(w);
     SDL_Quit();
     return 0;
-}   
+}      
